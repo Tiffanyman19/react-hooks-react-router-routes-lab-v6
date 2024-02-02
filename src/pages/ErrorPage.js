@@ -1,14 +1,20 @@
-import NavBar from "../components/NavBar"
+import NavBar from "../components/NavBar";
+import { useRouteError } from "react-router-dom";
 
-function ErrorPage() {
-    return(
+const ErrorPage = () => {
+    const error = useRouteError()
+    console.log(error);
+
+    return (
         <>
-        <header>
-            <NavBar />
-        </header>
-        <h1>Oops! Looks like something went wrong!</h1>
+            <header>
+                <NavBar />
+            </header>
+            <main>
+                <h1>Oops! Looks like something went wrong.</h1>
+            </main>
         </>
     )
 }
 
-export default ErrorPage;
+export default ErrorPage
